@@ -1,18 +1,91 @@
-import { useState } from 'react'
-// import ListC from './component/listC'
-import TodoList from './component/listC'
-import Crs from './component/crs'
-// import './App.css'
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import TodoList from './component/listC';
+import Home from './component/home';
+import Login from './component/login';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-    <TodoList />
-    <Crs />
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/user/products" element={<TodoList />} />
+    </Routes>
+    // <TodoList />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  );
 }
 
-export default App
+export default App;
+
+
+// import { useState } from 'react';
+// // import { Router, Route, Switch } from 'react-router-dom';
+// import { Routes, Route} from 'react-router-dom';
+// import TodoList from './component/listC';
+// // import Crs from './component/crs';
+// import Home from './component/home';
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     // <Router>
+//     //   <Switch>
+//     //     <Route exact path="/">
+//     //       <TodoList />
+//     //     </Route>
+//     //     <Route path="/crs">
+//     //       <Crs />
+//     //     </Route>
+//     //   </Switch>
+//     // </Router>
+//     <Routes>
+//       <Route path="/" element={<Home />} />
+//       <Route path="/user/products" element={<TodoList />} />
+//     </Routes>
+//       // <>
+//         // <TodoList />
+//         // <Crs />
+//       // </>
+//   );
+// }
+
+// export default App;

@@ -44,7 +44,7 @@ const TodoList = () => {
         name: newTodoName,
         price: newTodoPrice,
       });
-      if (response.status === 201) {
+      if (response.status === 200) {
         fetchTodos();
         setNewTodoName('');
         setNewTodoPrice('');
