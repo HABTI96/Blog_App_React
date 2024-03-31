@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Button from './Button';
 
 const ProductsList = () => {
   const [Products, setProducts] = useState([]);
@@ -69,10 +70,10 @@ const ProductsList = () => {
     }
   };
 
-  const editProduct = (todo) => {
-    setEditingProduct(todo.id);
-    setEditedProductName(todo.name);
-    setEditedProductPrice(todo.price);
+  const editProduct = (product) => {
+    setEditingProduct(product.id);
+    setEditedProductName(product.name);
+    setEditedProductPrice(product.price);
   };
 
   const saveEditedProduct = async () => {
@@ -119,8 +120,16 @@ const ProductsList = () => {
                   </>
                   ) : (
                   <>
-                    <button onClick={() => editProduct(Product)}>Edit</button>
-                    <button onClick={() => deleteProduct(Product.id)}>Delete</button>
+                    {/* <button onClick={() => editProduct(Product)}>Edit</button> */}
+                    {/* <button onClick={() => deleteProduct(Product.id)}>Delete</button> */}
+                    <div className='flex justify-center'>
+                      <div onClick={() => deleteProduct(Product.id)}>
+                        <Button name={'Delete'} background={'red'}/>
+                      </div>
+                      <div onClick={() => editProduct(Product)}>
+                        <Button name={'Edit'} background={'green'}/>
+                      </div>
+                    </div>
                   </>
                 )}
             </div>
@@ -150,7 +159,7 @@ const ProductsList = () => {
       <button onClick={addProduct}>Add Product</button>
     </div>
         ):(
-          <p>you're not loggedin</p>
+          <p className='flex justify-center items-center h-screen text-4xl '>you have to login</p>
         )}
     </>
   );

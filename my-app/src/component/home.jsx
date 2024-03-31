@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cards from './Cards';
-
+import Button from './Button';
 function Home() {
     const [Products, setProducts] = useState([]);
     useEffect(() => {
@@ -18,8 +18,7 @@ function Home() {
       };
     return (
         <div>
-            <h1>Home</h1>
-            <p>Welcome to the home page!</p>
+            <p className='text-center text-3xl p-5'>Welcome to the home page!</p>
             <div className='flex justify-center items-center flex-wrap'>
                 {Products.map(product=>(
                     <>
