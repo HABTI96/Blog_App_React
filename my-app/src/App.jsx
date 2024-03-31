@@ -1,22 +1,21 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import TodoList from './component/listC';
+import ProductsList from './component/listC';
 import Home from './component/home';
 import Login from './component/login';
-
+import Register from './component/register';
+import Navbar from './component/navbar';
+import './App.css'
 function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <Routes>
+return (<>
+    <Navbar />
+      <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/Register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/user/products" element={<TodoList />} />
+      <Route path="/products" element={<ProductsList />} />
     </Routes>
-    // <TodoList />
-
-
-
+  </>
 
 
 

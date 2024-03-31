@@ -24,7 +24,7 @@ function Login() {
 
         console.log(token);
         // If authentication is successful, redirect to dashboard or protected route
-        window.location.href = '/';
+        window.location.href = '/products';
       } else {
         // Handle authentication failure, e.g., display error message
         console.error('Authentication failed');
@@ -35,18 +35,20 @@ function Login() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+    <div className="login flex justify-center items-center h-screen">
+      <form onSubmit={handleLogin} className='border border-blue-600 p-10 rounded-lg'>
+          <h2 className='text-3xl text-center'>Login</h2>
         <div>
           <label>Username:</label>
-          <input type="text" value={name}  onChange={(e) => setUsername(e.target.value)} />
+          <input type="text" value={name} className="block px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm max-w-[220px]" placeholder='Username'
+          onChange={(e) => setUsername(e.target.value)} />
         </div>
         <div>
           <label>Password:</label>
-          <input type="password"  value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type="password"  value={password} className="block px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm max-w-[220px]" placeholder='******'
+          onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="block px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm max-w-[220px]">Login</button>
       </form>
     </div>
   );
